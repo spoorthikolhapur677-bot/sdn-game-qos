@@ -1,0 +1,45 @@
+{
+  "benchmarks": {
+    "baseline": {
+      "total_sent": 100,
+      "total_received": 100,
+      "packets_lost": 0,
+      "loss_pct": 0.0,
+      "min_rtt_ms": 0.193,
+      "avg_rtt_ms": 17.444,
+      "max_rtt_ms": 28.241,
+      "jitter_ms": 5.581,
+      "duration_s": 2.38,
+      "port": 5000,
+      "server_ip": "10.0.0.1"
+    },
+    "congested_with_qos": {
+      "total_sent": 100,
+      "total_received": 100,
+      "packets_lost": 0,
+      "loss_pct": 0.0,
+      "min_rtt_ms": 0.492,
+      "avg_rtt_ms": 17.728,
+      "max_rtt_ms": 21.738,
+      "jitter_ms": 6.319,
+      "duration_s": 2.37,
+      "port": 5000,
+      "server_ip": "10.0.0.1"
+    },
+    "congested_no_qos": {
+      "total_sent": 100,
+      "total_received": 100,
+      "packets_lost": 0,
+      "loss_pct": 0.0,
+      "min_rtt_ms": 76.524,
+      "avg_rtt_ms": 106.552,
+      "max_rtt_ms": 381.148,
+      "jitter_ms": 35.761,
+      "duration_s": 2.37,
+      "port": 5001,
+      "server_ip": "10.0.0.1"
+    }
+  },
+  "flow_dump": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x0, duration=19.025s, table=0, n_packets=199, n_bytes=24787, idle_timeout=30, priority=20,udp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,tp_dst=5000 actions=set_queue:1,output:1\n cookie=0x0, duration=19s, table=0, n_packets=199, n_bytes=46333, idle_timeout=30, priority=20,udp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,tp_src=5000 actions=set_queue:1,output:2\n cookie=0x0, duration=24.840s, table=0, n_packets=1, n_bytes=42, idle_timeout=30, priority=10,arp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01 actions=set_queue:2,output:1\n cookie=0x0, duration=19.768s, table=0, n_packets=0, n_bytes=0, idle_timeout=30, priority=10,arp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02 actions=set_queue:2,output:2\n cookie=0x0, duration=24.835s, table=0, n_packets=15, n_bytes=7374, idle_timeout=30, priority=10,icmp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02 actions=set_queue:2,output:2\n cookie=0x0, duration=24.831s, table=0, n_packets=3, n_bytes=294, idle_timeout=30, priority=10,icmp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01 actions=set_queue:2,output:1\n cookie=0x0, duration=13.495s, table=0, n_packets=20, n_bytes=1662, idle_timeout=30, priority=10,tcp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01 actions=set_queue:2,output:1\n cookie=0x0, duration=13.484s, table=0, n_packets=22, n_bytes=1446, idle_timeout=30, priority=10,tcp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02 actions=set_queue:2,output:2\n cookie=0x0, duration=13.474s, table=0, n_packets=0, n_bytes=0, idle_timeout=30, priority=10,udp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,tp_src=5201,tp_dst=54213 actions=set_queue:2,output:2\n cookie=0x0, duration=13.468s, table=0, n_packets=3933, n_bytes=5860170, idle_timeout=30, priority=10,udp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,tp_src=54213,tp_dst=5201 actions=set_queue:2,output:1\n cookie=0x0, duration=5.712s, table=0, n_packets=3981, n_bytes=5931690, idle_timeout=30, priority=10,udp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,tp_src=39326,tp_dst=5201 actions=set_queue:2,output:1\n cookie=0x0, duration=5.710s, table=0, n_packets=0, n_bytes=0, idle_timeout=30, priority=10,udp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,tp_src=5201,tp_dst=39326 actions=set_queue:2,output:2\n cookie=0x0, duration=3.465s, table=0, n_packets=99, n_bytes=12333, idle_timeout=30, priority=10,udp,in_port=2,dl_src=00:00:00:00:00:02,dl_dst=00:00:00:00:00:01,tp_src=45358,tp_dst=5001 actions=set_queue:2,output:1\n cookie=0x0, duration=3.367s, table=0, n_packets=98, n_bytes=22882, idle_timeout=30, priority=10,udp,in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02,tp_src=5001,tp_dst=45358 actions=set_queue:2,output:2\n cookie=0x0, duration=27.071s, table=0, n_packets=30, n_bytes=2694, priority=0 actions=CONTROLLER:65535",
+  "queue_stats": "OFPST_QUEUE reply (OF1.3) (xid=0x2): 6 queues\n  port 1 queue 0: bytes=280, pkts=4, errors=0, duration=1001595289.3904967296s\n  port 1 queue 1: bytes=24908, pkts=200, errors=0, duration=1001595289.3904967296s\n  port 1 queue 2: bytes=11806618, pkts=8043, errors=0, duration=1001595289.3904967296s\n  port 2 queue 0: bytes=392, pkts=6, errors=0, duration=1001595289.3904967296s\n  port 2 queue 1: bytes=46541, pkts=200, errors=0, duration=1001595289.3904967296s\n  port 2 queue 2: bytes=32426, pkts=142, errors=0, duration=1001595289.3904967296s"
+}
